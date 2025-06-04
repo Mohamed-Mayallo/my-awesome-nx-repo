@@ -1,0 +1,74 @@
+{
+  "name": "@my-awesome-nx-repo/my-backend",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "tags": [
+      "scope:backend"
+    ],
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "defaultConfiguration": "production",
+        "options": {
+          "platform": "node",
+          "outputPath": "packages/my-backend/dist",
+          "format": [
+            "cjs"
+          ],
+          "bundle": false,
+          "main": "packages/my-backend/src/main.ts",
+          "tsConfig": "packages/my-backend/tsconfig.app.json",
+          "assets": [
+            "packages/my-backend/src/assets"
+          ],
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@my-awesome-nx-repo/my-backend:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@my-awesome-nx-repo/my-backend:build:development"
+          },
+          "production": {
+            "buildTarget": "@my-awesome-nx-repo/my-backend:build:production"
+          }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
+      }
+    }
+  }
+}

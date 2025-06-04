@@ -2,5 +2,15 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./packages/my-backend"
+    },
+    {
+      "path": "./libs/shared-ui"
+    },
+    {
+      "path": "./packages/my-react-app"
+    }
+  ]
 }
