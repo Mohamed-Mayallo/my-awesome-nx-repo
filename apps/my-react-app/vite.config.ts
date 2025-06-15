@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/my-react-app',
+  cacheDir: '../../node_modules/.vite/apps/my-react-app',
   server: {
     port: 4200,
     host: 'localhost',

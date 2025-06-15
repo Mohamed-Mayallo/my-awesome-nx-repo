@@ -1,4 +1,5 @@
 import { Button } from '@my-awesome-nx-repo/shared-ui'; // Import our shared button
+import './app.module.css';
 
 export function App() {
   const handleClick = () => {
@@ -8,8 +9,8 @@ export function App() {
   return (
     <div>
       <h1>Welcome to my-react-app!</h1>
-      <Button text="Click Me" onClick={handleClick} />{' '}
       {/* Use the shared button */}
+      <Button text="Click Me" onClick={handleClick} />
       <p>This button comes from a shared library.</p>
     </div>
   );

@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "tags": [
-      "scope:backend"
-    ],
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
@@ -15,15 +12,15 @@
         "defaultConfiguration": "production",
         "options": {
           "platform": "node",
-          "outputPath": "packages/my-backend/dist",
+          "outputPath": "apps/my-backend/dist",
           "format": [
             "cjs"
           ],
           "bundle": false,
-          "main": "packages/my-backend/src/main.ts",
-          "tsConfig": "packages/my-backend/tsconfig.app.json",
+          "main": "apps/my-backend/src/main.ts",
+          "tsConfig": "apps/my-backend/tsconfig.app.json",
           "assets": [
-            "packages/my-backend/src/assets"
+            "apps/my-backend/src/assets"
           ],
           "esbuildOptions": {
             "sourcemap": true,

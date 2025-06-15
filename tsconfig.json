@@ -4,13 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/my-backend"
+      "path": "./apps/my-backend"
     },
     {
-      "path": "./libs/shared-ui"
+      "path": "./packages/shared-ui"
     },
     {
-      "path": "./packages/my-react-app"
+      "path": "./apps/my-react-app"
     }
   ]
 }

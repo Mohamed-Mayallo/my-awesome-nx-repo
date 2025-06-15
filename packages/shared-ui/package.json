@@ -15,8 +15,6 @@
     }
   },
   "nx": {
-    "tags": [
-      "scope:shared"
-    ]
+    "tags": ["scope:shared"]
   }
 }
